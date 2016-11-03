@@ -1,0 +1,64 @@
+body {
+    background-color: black;
+    color: white;
+}
+table {
+	width: 100%;
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+table, th, td {
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 2px solid #CC1D1D;
+}
+ul {
+    border-left: 5px solid red;
+    background-color: #f1f1f1;
+    list-style-type: none;
+    padding: 10px 20px;
+}
+li {
+	color: black;
+}
+#event_num {
+    text-align: center;
+}
+#event_type {
+    text-align: center;
+	font-weight: bold;
+}
+#event_tg {
+    text-align: center;
+}
+#event_responders {
+    text-align: center;
+}
+#event_mapref {
+    text-align: center;
+}
+#event_map {
+    text-align: center;
+	width: 50%;
+	height: 800px;
+}
+#osm {
+    text-align: center;
+	height: 800px;
+}
+#event_address {
+	text-align: left;
+	vertical-align: top;
+	width: 50%;
+	font-size: 60px;
+}
+#event_timer {
+	text-align: center;
+	vertical-align: top;
+	width: 15%;
+}
+#system_status {
+	text-align: center;
+	vertical-align: top;
+}

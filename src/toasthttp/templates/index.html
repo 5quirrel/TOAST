@@ -1,0 +1,174 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+<script src="http://{{ systemip }}:8080/static/js/reconnecting-websocket.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+<link rel="stylesheet" href="http://{{ systemip }}:8080/static/stylesheet.css" />
+<title>{{ title }} - TOAST Turn Out Display</title>
+
+</head>
+<body>
+<table>
+<tbody>
+<tr>
+<td colspan="2" rowspan="1" id="event_type">Event Type</td>
+<td id="event_num">INC0000</td>
+<td id="event_timer">Timer</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="1" id="event_address">Event Address</td>
+<td rowspan="1" colspan="2" id="event_map"><div id="osm"></div><div id="img"></div></td>
+</tr>
+<tr>
+<td id="event_mapref">Map Ref</td>
+<td id="event_tg">Talkgroup</td>
+<td id="event_responders">Responders</td>
+<td id="system_status">Status</td>
+</tr>
+</tbody>
+</table>
+
+<audio id="alerttone">
+  <source src="/static/{{ alert }}" type="audio/{{ alerttype }}">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+
+var alert = document.getElementById("alerttone");
+
+var timeBegan = null
+    , timeStopped = null
+    , stoppedDuration = 0
+    , timerStarted = null;
+
+function timerStart() {
+    if (timeBegan === null) {
+        timeBegan = new Date();
+    }
+
+    if (timeStopped !== null) {
+        stoppedDuration += (new Date() - timeStopped);
+    }
+    console.log(stoppedDuration);
+
+    timerStarted = setInterval(clockRunning, 10);	
+}
+
+function timerReset() {
+    clearInterval(timerStarted);
+    stoppedDuration = 0;
+    timeBegan = null;
+    timeStopped = null;
+    var event_timer = setInterval(Clock, 1000);
+}
+
+function clockRunning(){
+    var currentTime = new Date()
+        , timeElapsed = new Date(currentTime - timeBegan - stoppedDuration)
+        , min = timeElapsed.getUTCMinutes()
+        , sec = timeElapsed.getUTCSeconds()
+        , ms = timeElapsed.getUTCMilliseconds();
+
+    document.getElementById("event_timer").innerHTML = 
+        (min > 9 ? min : "0" + min) + ":" + 
+        (sec > 9 ? sec : "0" + sec) + "." + 
+        (ms > 99 ? ms : ms > 9 ? "0" + ms : "00" + ms);
+};
+
+function SayIt(phrase)  {
+var u = new SpeechSynthesisUtterance(phrase);
+u.rate = 0.5;
+speechSynthesis.speak(u);
+};
+
+function Clock() {
+    var d = new Date();
+    document.getElementById("event_timer").innerHTML = d.toLocaleTimeString();
+}
+
+function playAlert() {
+	alert.play();
+}
+
+var Sixty, Ninety;
+
+var mymap = L.map('osm').setView([-32.063,133.158], 5);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(mymap);
+
+var event_timer = setInterval(Clock, 1000);
+
+document.getElementById("system_status").style.backgroundColor = 'red';
+
+var ws = new ReconnectingWebSocket("ws://{{ systemip }}:5678/"),
+
+messages = document.createElement('ul');
+
+ws.onopen = function (event) {
+
+document.getElementById("system_status").style.backgroundColor = 'green'
+
+};
+
+ws.onclose = function (event) {
+
+document.getElementById("system_status").style.backgroundColor = 'red'
+
+};
+
+ws.onmessage = function (event) {
+
+	console.log(JSON.parse(event.data));
+
+	var incident = JSON.parse(event.data),
+
+	messages = document.getElementsByTagName('ul')[0],
+	message = document.createElement('li'),
+	content = document.createTextNode(incident.event_time + " " + incident.event_num + " " + incident.event_type + " " + incident.event_address);
+	message.appendChild(content);
+	messages.appendChild(message);
+
+	  document.getElementById("event_num").innerHTML = incident.event_num;
+	  document.getElementById("event_type").innerHTML = incident.event_type;
+	  document.getElementById("event_address").innerHTML = incident.event_address;
+	  document.getElementById("event_mapref").innerHTML = incident.event_mapref;
+	  document.getElementById("event_responders").innerHTML = incident.event_responders;
+	  document.getElementById("event_tg").innerHTML = incident.event_tg;
+
+	if (incident.event_maptype == "OSM") {
+	document.getElementById("img").style.display = "none";
+	document.getElementById("osm").style.display = "block";
+	mymap.setView([incident.event_lat,incident.event_long], 20);
+	};
+
+	if (incident.event_maptype == "IMG") {
+	document.getElementById("osm").style.display = "none";
+	document.getElementById("img").style.display = "block";
+	document.getElementById("img").innerHTML = "<img src=/static/maps/" + incident.event_mapresource + ">";
+	}
+
+	clearTimeout(Sixty);
+	clearTimeout(Ninety);
+
+	timerReset();
+	timerStart();
+	document.getElementById("event_timer").style.backgroundColor = 'green';
+
+	playAlert();
+
+	alert.onended = function(){SayIt(incident.event_speech);};
+
+	Sixty = setTimeout(function(){SayIt("Sixty Seconds"); document.getElementById("event_timer").style.backgroundColor = 'yellow';}, 60000);
+	Ninety = setTimeout(function(){SayIt("Ninety Seconds"); document.getElementById("event_timer").style.backgroundColor = 'red';}, 90000);
+	ClockTimeout = setTimeout(function(){timerReset();document.getElementById("event_timer").style.backgroundColor = 'black';}, 600000);
+
+};
+
+  document.body.appendChild(messages);
+
+</script>
+<br>
+</body></html>
