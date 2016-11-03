@@ -1,69 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>Toast by 5quirrel</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Toast by 5quirrel</title>
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Toast</h1>
+        <p class="header">Turn Out Alerting SysTem</p>
 
-        <header>
-          <h1>Toast</h1>
-          <h2>Turn Out Alerting SysTem</h2>
-        </header>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/5quirrel/TOAST/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/5quirrel/TOAST/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/5quirrel/TOAST">View On GitHub</a></li>
+        </ul>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/5quirrel/TOAST/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/5quirrel/TOAST/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/5quirrel/TOAST" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/5quirrel">5quirrel</a></p>
 
-        <hr>
 
-        <section id="main_content">
-          <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+      </header>
+      <section>
+        <h1>
+<a id="toast-turn-out-alerting-system" class="anchor" href="#toast-turn-out-alerting-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TOAST <em>Turn Out Alerting SysTem</em>
+</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p><em>An open source turn out application designed to assist volunteer emergency services organisations</em></p>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<p>TOAST is an in-station turnout system designed to fill the need for a free and low cost turn out system for volunteer organisations, where the funds to buy larger commercial systems aren't available.</p>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<p>It can be set up by any one with some motivation and basic IT\communications knowledge.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>The system is designed to be modular and features can be turned on and off as desired. It can do the whole lot, including relays for operating station lighting, door, sirens, or as little as providing a screen and a map.</p>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>TOAST is completely open-source and written 100% in Python 3.5, everything it does is out there for all to see. This makes user enhancement approachable and customisation for your own messaging systems and formats possible.</p>
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="version-1-release" class="anchor" href="#version-1-release" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 1 Release</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-        </section>
+<p>Here's the feature list for the first release version...</p>
 
-        <footer>
-          Toast is maintained by <a href="https://github.com/5quirrel">5quirrel</a><br>
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+<ul>
+<li>Low, low price of free! No ongoing costs, totally open source!</li>
+<li>HTTP call information server and clients. Call information displayed in a live locally hosted webpage with map and Text-to-Speech information announcement.</li>
+<li>OpenStreetMaps incident or static image display.</li>
+<li>Text-to-Speech voice announcement of incident via browser.</li>
+<li>Relay triggering for ControlByWeb relay systems.</li>
+<li>Fully compaitable as a message handler for TIMS application.</li>
+</ul>
 
-        
-      </div>
+<h4>
+<a id="messaging-input-systems" class="anchor" href="#messaging-input-systems" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Messaging Input Systems</h4>
+
+<ul>
+<li>Paging (Serial)</li>
+<li>SMS (USB or Serial)</li>
+</ul>
+
+<h4>
+<a id="localities" class="anchor" href="#localities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Localities</h4>
+
+<h5>
+<a id="australia-south-australia" class="anchor" href="#australia-south-australia" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Australia, South Australia</h5>
+
+<p>Designed for the SAGRN messaging format. TOAST is also compatible for use with the TIMS application and can be used as a message handler to provide TIMS with SMS messaging and relay capabilities.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<h3>
+<a id="general" class="anchor" href="#general" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General</h3>
+
+<p>OS: Windows (Tested on Windows 7), Linux (Untested)</p>
+
+<h3>
+<a id="by-capability" class="anchor" href="#by-capability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>By Capability</h3>
+
+<h4>
+<a id="sms" class="anchor" href="#sms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SMS</h4>
+
+<p>Cellular modem with serial connection (Note: USB modems have Serial COM port access).</p>
+
+<h4>
+<a id="paging" class="anchor" href="#paging" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Paging</h4>
+
+<p>Paging device capable of outputting messages via a serial connection.</p>
+
+<h4>
+<a id="relays" class="anchor" href="#relays" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Relays</h4>
+
+<p>Supported Relays:</p>
+
+<ul>
+<li><a href="http://www.controlbyweb.com/webrelay-quad/">ControlByWeb QuadRelay</a></li>
+<li><a href="http://www.controlbyweb.com/webrelay/">ControlByWeb WebRelay</a></li>
+</ul>
+
+<h4>
+<a id="http" class="anchor" href="#http" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTTP</h4>
+
+<ul>
+<li>Networked PC to act as server, accessible to all clients.</li>
+</ul>
+
+<h5>
+<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser</h5>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th align="center">Chrome</th>
+<th align="center">IE</th>
+<th align="center">FireFox</th>
+<th align="center">Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WebSockets</td>
+<td align="center">16</td>
+<td align="center">11</td>
+<td align="center">11</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td>WebSpeech</td>
+<td align="center">33</td>
+<td align="center"></td>
+<td align="center">49</td>
+<td align="center">7</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="install-process" class="anchor" href="#install-process" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install Process</h2>
+
+<ul>
+<li>TBA</li>
+</ul>
+
+<h2>
+<a id="configuration-process" class="anchor" href="#configuration-process" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration Process</h2>
+
+<ul>
+<li>TBA</li>
+</ul>
+
+<h3>
+<a id="configuration-files" class="anchor" href="#configuration-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration Files</h3>
+
+<h4>
+<a id="general-config" class="anchor" href="#general-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Config</h4>
+
+<p><strong>settings\config.ini</strong></p>
+
+<h4>
+<a id="mapping-resources" class="anchor" href="#mapping-resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mapping Resources</h4>
+
+<p><strong>settings\maps.csv</strong></p>
+
+<p>Formatted as Reference,Type,Resource,Resource</p>
+
+<h5>
+<a id="osm-format" class="anchor" href="#osm-format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OSM Format</h5>
+
+<p>Formatted as Reference,Type,Lat,Long</p>
+
+<p>(e.g. CTY 12 86B,OSM,-34.0000,128.00000)</p>
+
+<h5>
+<a id="static-image-format" class="anchor" href="#static-image-format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Static Image Format</h5>
+
+<p>Reference,Type,Image,</p>
+
+<p>(e.g. CTY 12 86B,IMG,static\maps\CTY_12_86B.png,)</p>
+
+<h4>
+<a id="text-to-speech" class="anchor" href="#text-to-speech" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Text-to-Speech</h4>
+
+<h5>
+<a id="responder-abbreviations" class="anchor" href="#responder-abbreviations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Responder Abbreviations</h5>
+
+<p><strong>settings\tts_resp.csv</strong></p>
+
+<p>Formatted as Word,Spoken</p>
+
+<p>(e.g. CTY101,City one zero one)</p>
+
+<h5>
+<a id="address-substitutions" class="anchor" href="#address-substitutions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Address Substitutions</h5>
+
+<p><strong>settings\tts_places.csv</strong></p>
+
+<p>Formatted as Word,Spoken</p>
+
+<p>(e.g. St,Street)</p>
+
+<h2>
+<a id="future-release-ideas" class="anchor" href="#future-release-ideas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future Release Ideas</h2>
+
+<p>Feel free to put forward any other ideas as an Enhancement on the issues page of this project.</p>
+
+<h2>
+<a id="bugs-and-issues" class="anchor" href="#bugs-and-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bugs and Issues</h2>
+
+<p>Please report any bugs found or crashes experienced on the issues page of this project.</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<h3>
+<a id="code-and-modules-used" class="anchor" href="#code-and-modules-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code and Modules Used</h3>
+
+<ul>
+<li>PySerial (<a href="https://pythonhosted.org/pyserial/">https://pythonhosted.org/pyserial/</a>)</li>
+<li>Flask (<a href="http://flask.pocoo.org/">http://flask.pocoo.org/</a>)</li>
+<li>WebSockets (<a href="https://websockets.readthedocs.io/en/stable/">https://websockets.readthedocs.io/en/stable/</a>)</li>
+<li>Python-Messaging (<a href="https://github.com/onlinecity/python-messaging">https://github.com/onlinecity/python-messaging</a>)</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
