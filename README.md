@@ -70,11 +70,11 @@ Supported Relays:
 
 ## Install Process
 
-* TBA
+Refer to "readme.txt"
 
 ## Configuration Process
 
-* TBA
+Refer to "readme.txt"
 
 ### Configuration Files
 
