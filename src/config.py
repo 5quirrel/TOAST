@@ -13,7 +13,7 @@ from logging.config import fileConfig
 configfile = configparser.ConfigParser()
 
 #Set version
-ver = '0.1 Beta'
+ver = '1.0 Beta'
 
 #Check for config section
 if configfile.read('settings\\config.ini') == []:
