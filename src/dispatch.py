@@ -68,8 +68,10 @@ class dispatcher:
                         
                         logging.info('Message already dispatched')
                         
+                    #INTERMESSAGE DELAY
+                    time.sleep(self.delay)
+                        
             except IndexError:
                     pass
             #Pause
-            time.sleep(self.delay)
             time.sleep(0.1)
