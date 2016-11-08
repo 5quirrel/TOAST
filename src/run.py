@@ -113,6 +113,8 @@ dispatch = dispatch.dispatcher(incoming, httpoutgoing, parser, relay)
 dispatch.http = config.http
 dispatch.tim = config.tim
 dispatch.capcode = config.capcode
+dispatch.delay = config.intermessagedelay
+dispatch.duplicatesallowed = config.duplicatesallowed
 t_dispatcher = threading.Thread(target=dispatch.run)
 t_dispatcher.daemon = True
 t_dispatcher.start()

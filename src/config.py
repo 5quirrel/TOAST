@@ -37,7 +37,7 @@ testmode = configfile.getboolean('GENERAL','TESTMODE')
 
 #DISPATCH
 intermessagedelay = configfile.getint('DISPATCH','INTERMESSAGEDELAY')
-dropduplicates = configfile.getboolean('DISPATCH', 'DROPDUPILICATES')
+duplicatesallowed = configfile.getboolean('DISPATCH', 'DUPILICATESALLOWED')
 
 #TIM
 tim = configfile.getboolean('TIM', 'ENABLED')

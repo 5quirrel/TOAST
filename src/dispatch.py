@@ -14,7 +14,9 @@ class dispatcher:
         self.httpqueue = httpqueue
         self.sent = []
         self.parser = parser
+        self.delay = 1
         self.relay = relay
+        self.duplicatesallowed = False
 
     def run(self):
         
@@ -28,7 +30,7 @@ class dispatcher:
                     rxmsg = self.sourcequeue.popleft()
                     logging.debug('Processing %s from queue' % rxmsg)
                     
-                    if rxmsg not in self.sent:
+                    if rxmsg not in self.sent or self.duplicatesallowed:
 
                         logging.info('Dispatching message')
                         
@@ -69,4 +71,5 @@ class dispatcher:
             except IndexError:
                     pass
             #Pause
+            time.sleep(self.delay)
             time.sleep(0.1)
