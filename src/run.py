@@ -27,8 +27,8 @@ httpoutgoing = deque([])
 #Define Message Parser class
 
 logging.debug('Defining Parser')
-parser = parsers.parser()
-parser.settingspath = config.settingspath
+parser = parsers.parser(config.settingspath)
+logging.debug('Parse settings path set as : %s' % config.settingspath)
 
 #HTTP
 

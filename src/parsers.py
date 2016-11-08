@@ -6,9 +6,9 @@ import datetime
 
 class parser():
     
-    def __init__(self):
+    def __init__(self, settingspath):
         
-        self.settingspath = 'settings\\'
+        self.settingspath = settingspath
         self.maprefs = {}
         self.ttsplaces = {}
         self.ttsresp = {}

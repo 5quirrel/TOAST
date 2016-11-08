@@ -31,7 +31,7 @@ locale = configfile.get('GENERAL','LOCALE')
 if locale == 'NONE':
     settingspath = 'settings\\'
 else:
-    settingspath = 'settings\\locale\\%s\\' % locale
+    settingspath = 'settings\\locales\\%s\\' % locale
 
 testmode = configfile.getboolean('GENERAL','TESTMODE')
 
