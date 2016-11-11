@@ -77,6 +77,7 @@ function clockRunning(){
 };
 
 function SayIt(phrase)  {
+speechSynthesis.cancel();
 var u = new SpeechSynthesisUtterance(phrase);
 u.rate = 0.8;
 speechSynthesis.speak(u);
