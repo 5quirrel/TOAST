@@ -57,6 +57,7 @@ li {
 	text-align: center;
 	vertical-align: top;
 	width: 15%;
+	font-family: "Courier New", Courier, monospace;
 }
 #system_status {
 	text-align: center;
